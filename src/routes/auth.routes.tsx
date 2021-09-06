@@ -8,7 +8,14 @@ import { SignIn } from '../screens/SignIn'
 import { AppointmentDetails } from '../screens/AppointmentDetails'
 import { AppointmentCreate } from '../screens/AppointmentCreate'
 
-const { Navigator, Screen } = createStackNavigator()
+export type AuthStackParamList = {
+  SignIn: undefined
+  Home: undefined
+  AppointmentDetails: undefined
+  AppointmentCreate: undefined
+}
+
+const { Navigator, Screen } = createStackNavigator<AuthStackParamList>()
 
 export function AuthRoutes() {
   return (
