@@ -13,6 +13,7 @@ import { GuildIcon } from '../../components/GuildIcon'
 
 export function AppointmentCreate() {
   const [category, setCategory] = useState('')
+
   return (
     <Background>
       <Header title="Agenda partida" />
