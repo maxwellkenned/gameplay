@@ -10,6 +10,7 @@ import { Header } from '../../components/Header'
 import { styles } from './styles'
 import { theme } from '../../global/styles/theme'
 import { GuildIcon } from '../../components/GuildIcon'
+import { SmallInput } from '../../components/SmallInput'
 
 export function AppointmentCreate() {
   const [category, setCategory] = useState('')
@@ -51,6 +52,28 @@ export function AppointmentCreate() {
             />
           </View>
         </RectButton>
+
+        <View style={styles.field}>
+          <View>
+            <Text style={styles.label}>Dia e mês</Text>
+
+            <View style={styles.column}>
+              <SmallInput maxLength={2} />
+              <Text style={styles.divider}>/</Text>
+              <SmallInput maxLength={2} />
+            </View>
+          </View>
+
+          <View>
+            <Text style={styles.label}>Hora e minuto</Text>
+
+            <View style={styles.column}>
+              <SmallInput maxLength={2} />
+              <Text style={styles.divider}>:</Text>
+              <SmallInput maxLength={2} />
+            </View>
+          </View>
+        </View>
       </View>
     </Background>
   )
