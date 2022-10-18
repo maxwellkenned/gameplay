@@ -1,17 +1,17 @@
-import { StyleSheet } from 'react-native'
+import styled from 'styled-components/native'
+import { LinearGradient } from 'expo-linear-gradient'
 
-export const styles = StyleSheet.create({
-  container: {
-    width: 49,
-    height: 49,
-    borderRadius: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 22
-  },
-  avatar: {
-    width: 46,
-    height: 46,
-    borderRadius: 8
-  }
-})
+export const Container = styled(LinearGradient)`
+  width: 49px;
+  height: 49px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 22px;
+`
+
+export const Avatar = styled.Image`
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+`
