@@ -1,55 +1,61 @@
-import { StyleSheet } from 'react-native'
-import { theme } from '../../global/styles/theme'
+import styled from 'styled-components/native'
 
-export const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  content: {
-    flex: 1
-  },
-  header: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 12
-  },
-  title: {
-    fontFamily: theme.fonts.title700,
-    color: theme.colors.heading,
-    fontSize: 18
-  },
-  category: {
-    fontFamily: theme.fonts.text400,
-    color: theme.colors.heading,
-    fontSize: 13,
-    marginRight: 24
-  },
-  footer: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  },
-  dateInfo: {
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  playersInfo: {
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  date: {
-    fontFamily: theme.fonts.text500,
-    color: theme.colors.heading,
-    fontSize: 13,
-    marginLeft: 7
-  },
-  player: {
-    fontFamily: theme.fonts.text500,
-    fontSize: 13,
-    marginLeft: 7,
-    marginRight: 24
-  }
-})
+export const Container = styled.View`
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+`
+
+export const Content = styled.View`
+  flex: 1;
+`
+
+export const Header = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 12px;
+`
+
+export const Title = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.title700};
+  color: ${({ theme }) => theme.colors.heading};
+  font-size: 18px;
+`
+
+export const Category = styled.Text`
+  font-family: ${({ theme }) => theme.fonts.title700};
+  color: ${({ theme }) => theme.colors.heading};
+  font-size: 18px;
+`
+
+export const Footer = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+`
+
+export const DateInfo = styled.View`
+  flex-direction: row;
+  align-items: center;
+`
+
+export const PlayerInfo = styled.View`
+  flex-direction: row;
+  align-items: center;
+`
+
+export const Date = styled.Text`
+  margin-left: 7px;
+  font-family: ${({ theme }) => theme.fonts.text500};
+  color: ${({ theme }) => theme.colors.highlight};
+  font-size: 13px;
+`
+
+export const Player = styled.Text<{ owner: boolean }>`
+  margin-left: 7px;
+  font-family: ${({ theme }) => theme.fonts.text500};
+  color: ${({ theme, owner }) =>
+    owner ? theme.colors.primary : theme.colors.on};
+  font-size: 13px;
+`
