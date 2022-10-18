@@ -7,8 +7,8 @@ import { GuildIcon } from '../GuildIcon'
 import PlayerSvg from '../../assets/player.svg'
 import CalendarSvg from '../../assets/calendar.svg'
 import { categories } from '../../utils/categories'
-import { styles } from './styles'
 import { theme } from '../../global/styles/theme'
+import * as S from './styles'
 
 export type GuildProps = {
   id: string
@@ -36,32 +36,32 @@ export function Appointment({ data, ...rest }: Props) {
 
   return (
     <RectButton {...rest}>
-      <View style={styles.container}>
+      <S.Container>
         <GuildIcon />
 
-        <View style={styles.content}>
-          <View style={styles.header}>
-            <Text style={styles.title}>{data.guild.name}</Text>
+        <S.Content>
+          <S.Header>
+            <S.Title>{data.guild.name}</S.Title>
 
-            <Text style={styles.category}>{category.title}</Text>
-          </View>
-          <View style={styles.footer}>
-            <View style={styles.dateInfo}>
+            <S.Category>{category.title}</S.Category>
+          </S.Header>
+          <S.Footer>
+            <S.DateInfo>
               <CalendarSvg />
 
-              <Text style={styles.date}>{data.date}</Text>
-            </View>
+              <S.Date>{data.date}</S.Date>
+            </S.DateInfo>
 
-            <View style={styles.playersInfo}>
+            <S.PlayerInfo>
               <PlayerSvg fill={owner ? primary : on} />
 
-              <Text style={[styles.player, { color: owner ? primary : on }]}>
+              <S.Player owner={owner}>
                 {owner ? 'Anfitrião' : 'Visitante'}
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
+              </S.Player>
+            </S.PlayerInfo>
+          </S.Footer>
+        </S.Content>
+      </S.Container>
     </RectButton>
   )
 }
