@@ -1,24 +1,20 @@
 import React from 'react'
-import { LinearGradient } from 'expo-linear-gradient'
+import { useTheme } from '@react-navigation/native'
 
-import { Image } from 'react-native'
-import { theme } from '../../global/styles/theme'
-
-import { styles } from './styles'
+import * as S from './styles'
 
 type Props = {
   urlImage: string
 }
 
 export function Avatar({ urlImage }: Props) {
-  const { secondary50, secondary70 } = theme.colors
+  const {
+    colors: { secondary50, secondary70 }
+  } = useTheme()
 
   return (
-    <LinearGradient
-      style={styles.container}
-      colors={[secondary50, secondary70]}
-    >
-      <Image style={styles.avatar} source={{ uri: urlImage }} />
-    </LinearGradient>
+    <S.Container colors={[secondary50, secondary70]}>
+      <S.Avatar source={{ uri: urlImage }} />
+    </S.Container>
   )
 }
