@@ -27,6 +27,12 @@ export function AppointmentDetails() {
       username: 'Kenned',
       avatar_url: 'https://github.com/maxwellkenned.png',
       status: 'offline'
+    },
+    {
+      id: '3',
+      username: 'Silva',
+      avatar_url: 'https://github.com/maxwellkenned.png',
+      status: 'offline'
     }
   ]
 
